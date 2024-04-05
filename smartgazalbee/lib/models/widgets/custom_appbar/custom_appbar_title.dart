@@ -24,11 +24,9 @@ class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => Get.back(), // GetX의 back 메서드를 사용하여 뒤로 가기
       ) : null,
       actions: [
-        IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icon/alarm.svg"))
+        IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/alarm.svg"))
       ],
-      title: Padding(
-        padding: EdgeInsets.only(top: 5),
-        child: Text(
+      title: Text(
           titleWrite,
           style: TextStyle(
             color: AppColor.text,
@@ -37,7 +35,6 @@ class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
             fontSize: 16,
           ),
         ),
-      ),
     );
   }
 

@@ -4,9 +4,10 @@ import 'package:smartgazalbee/constants.dart';
 class CustomTagBlock extends StatelessWidget {
   final double size;
   final String text;
+  final double textSize;
 
   const CustomTagBlock({
-    required this.size, required this.text
+    required this.size, required this.text, required this.textSize
   });
 
   @override
@@ -17,8 +18,8 @@ class CustomTagBlock extends StatelessWidget {
       padding: const EdgeInsets.all(3.0),
       child: Container(
         alignment: Alignment.center,
-        width: size * screenHeight * 0.0055 + text.length,
-        height: size * screenHeight * 0.0025,
+        width: size * screenHeight * 0.005 + text.length * 1.3,
+        height: size * screenHeight * 0.002,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,
@@ -34,7 +35,7 @@ class CustomTagBlock extends StatelessWidget {
             color: AppColor.text,
             fontFamily: "Pretendard",
             fontWeight: FontWeight.w600,
-            fontSize: 8
+            fontSize: textSize
           ),
         ),
       ),

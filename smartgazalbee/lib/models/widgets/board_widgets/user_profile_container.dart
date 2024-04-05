@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:smartgazalbee/constants.dart';
 
 class UserProfileContainer extends StatelessWidget {
@@ -7,8 +6,6 @@ class UserProfileContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: 30,
@@ -20,7 +17,7 @@ class UserProfileContainer extends StatelessWidget {
                 boxShadow:[
                   BoxShadow(
                       color: AppColor.shadow,
-                      blurRadius: 10)]
+                      blurRadius: 3)]
             ),
             child: Icon(Icons.person,color: AppColor.text,),
           ),

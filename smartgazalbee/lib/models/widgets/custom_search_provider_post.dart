@@ -21,7 +21,7 @@ class CustomSearchProviderPost extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: screenHeight * 0.045,
+          height: screenHeight * 0.03 + 10,
           width: double.infinity,
           child: TextFormField(
             controller: controller,
