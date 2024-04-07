@@ -31,36 +31,33 @@ class CustomPostBlock extends StatelessWidget {
             ]
         ),
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.only(left: 10.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  UserProfileContainer(),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 5),
-                    child: SvgPicture.asset("assets/icons/setting.svg"),
-                  ),
-                ],
-              ),
-              SizedBox(height: 15,),
-              Text(text,
-                style: TextStyle(
-                  color: AppColor.text,
-                  fontSize: 14,
-                  fontFamily: "Pretendard",
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 1,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    UserProfileContainer(),
+                    IconButton(onPressed: () { },icon: SvgPicture.asset("assets/icons/setting.svg"),),
+                  ],
                 ),
-                overflow: TextOverflow.visible,
-              ),
-            ],
-          ),
+                SizedBox(height: 15,),
+                Text(text,
+                  style: TextStyle(
+                    color: AppColor.text,
+                    fontSize: 14,
+                    fontFamily: "Pretendard",
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
+                  ),
+                  overflow: TextOverflow.visible,
+                ),
+              ],
+            ),
         ),
-      ),
+        ),
     );
   }
 }

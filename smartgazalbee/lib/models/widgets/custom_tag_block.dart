@@ -25,8 +25,8 @@ class CustomTagBlock extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                  color: AppColor.shadow,
-                  blurRadius: 10,
+                  color: AppColor.shadow.withOpacity(0.1),
+                  blurRadius: 3,
               )],
         ),
         child: Text(
@@ -37,6 +37,7 @@ class CustomTagBlock extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: textSize
           ),
+          textAlign: TextAlign.center,
         ),
       ),
     );

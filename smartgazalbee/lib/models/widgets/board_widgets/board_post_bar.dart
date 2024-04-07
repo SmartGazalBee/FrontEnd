@@ -9,13 +9,15 @@ class BoardPostBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(15,5,15,5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          UserProfileContainer(),
-          PostTitle(),
-          CustomTagScrollView(total: 10,),
-        ],
+      child: SingleChildScrollView(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            UserProfileContainer(),
+            PostTitle(),
+            CustomTagScrollView(total: 10,),
+          ],
+        ),
       ),
     );
   }
