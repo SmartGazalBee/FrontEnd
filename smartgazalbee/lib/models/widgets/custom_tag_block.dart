@@ -12,14 +12,14 @@ class CustomTagBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.all(3.0),
       child: Container(
         alignment: Alignment.center,
-        width: size * screenHeight * 0.005 + text.length * 1.3,
-        height: size * screenHeight * 0.002,
+        width: size * screenWidth * 0.01 + text.length * 2,
+        height: size * screenHeight * 0.0025,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.white,

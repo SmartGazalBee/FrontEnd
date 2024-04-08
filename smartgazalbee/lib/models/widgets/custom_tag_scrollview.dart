@@ -11,7 +11,9 @@ class CustomTagScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    double sizeWidth = MediaQuery.of(context).size.width;
+    return Container(
+      width: sizeWidth,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,58 +49,51 @@ class NavigationPage extends StatelessWidget {
         },
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.shadow,
-              blurRadius: 10,
-            )
-          ]
-        ),
+        decoration: BoxDecoration(boxShadow: [BoxShadow(color: AppColor.shadow, blurRadius: 10)]),
         child: BlocBuilder<NavigationBloc, NavigationState>(
           builder: (context, state) {
+            int currentIndex = state is NavigationPageLoaded ? state.currentIndex : 0;
+
             return BottomNavigationBar(
-              currentIndex: state is NavigationPageLoaded ? state.currentIndex : 0,
+              currentIndex: currentIndex,
               onTap: (index) {
                 BlocProvider.of<NavigationBloc>(context).add(NavigationTabChanged(tabIndex: index));
               },
-              selectedItemColor: AppColor.greyText,
-              selectedLabelStyle: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 10,
-                fontFamily: 'Pretendard',
-              ),
+              selectedItemColor: AppColor.yellow,
+              selectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 10, fontFamily: 'Pretendard'),
               unselectedItemColor: AppColor.greyText,
-              unselectedLabelStyle: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 10,
-                fontFamily: 'Pretendard',
-              ),
+              unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 10, fontFamily: 'Pretendard'),
               selectedIconTheme: IconThemeData(size: 24),
               unselectedIconTheme: IconThemeData(size: 24),
               showUnselectedLabels: true,
-              items: [
-                BottomNavigationBarItem(icon: Padding(
-                  padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset("assets/icons/home.svg"),
-                ), label: '홈'),
-                BottomNavigationBarItem(icon: Padding(
-                  padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset("assets/icons/noticeBoard.svg"),
-                ), label: '게시판'),
-                BottomNavigationBarItem(icon: Padding(
-                  padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset("assets/icons/gazalbee.svg"),
-                ), label: '비교하기'),
-                BottomNavigationBarItem(icon: Padding(
-                  padding: const EdgeInsets.all(3.0),
-                  child: SvgPicture.asset("assets/icons/myPage.svg"),
-                ), label: '프로필'),
-              ],
+              items: _buildNavigationItems(currentIndex),
             );
           },
         ),
       ),
     );
+  }
+
+  List<BottomNavigationBarItem> _buildNavigationItems(int currentIndex) {
+    const icons = [
+      "assets/icons/home.svg",
+      "assets/icons/noticeBoard.svg",
+      "assets/icons/gazalbee.svg",
+      "assets/icons/myPage.svg",
+    ];
+    const labels = ["홈", "게시판", "비교하기", "프로필"];
+
+    return List.generate(icons.length, (index) {
+      return BottomNavigationBarItem(
+        icon: Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: SvgPicture.asset(
+            icons[index],
+            color: currentIndex == index ? AppColor.yellow : AppColor.greyText,
+          ),
+        ),
+        label: labels[index],
+      );
+    });
   }
 }

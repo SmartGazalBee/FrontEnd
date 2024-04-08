@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:smartgazalbee/constants.dart'; // GetX 라이브러리 import
+import 'package:smartgazalbee/constants.dart';
 
 class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
   final String titleWrite;
@@ -21,7 +21,7 @@ class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       leading: backButton ? IconButton(
         icon: Icon(Icons.chevron_left, color: AppColor.text),
-        onPressed: () => Get.back(), // GetX의 back 메서드를 사용하여 뒤로 가기
+        onPressed: () => Get.back(),
       ) : null,
       actions: [
         IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/alarm.svg"))

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgazalbee/constants.dart';
@@ -15,7 +17,7 @@ class CustomPostProposeBar extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(
             width: 1,
-            color: AppColor.pink
+            color: AppColor.yellow
           ),
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
@@ -42,7 +44,7 @@ class CustomPostProposeBar extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SvgPicture.asset("assets/icons/send.svg")
+              SvgPicture.asset("assets/icons/send.svg",color: AppColor.yellow,)
             ],
           ),
         ),

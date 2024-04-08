@@ -16,7 +16,7 @@ class CustomPostBlock extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints( // 최소 최대크기
           maxHeight: sizeHeight * 0.3,
-          minHeight: sizeHeight * 0.15,
+          minHeight: sizeHeight * 0.1 + 50,
         ),
         width: double.infinity,
         height: sizeHeight * 0.1 + text.length * 0.7,

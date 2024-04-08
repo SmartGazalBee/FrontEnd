@@ -7,15 +7,19 @@ class BoardPostBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(15,5,15,5),
-      child: SingleChildScrollView(
+    double sizeWidth = MediaQuery.of(context).size.width;
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(15,5,15,5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             UserProfileContainer(),
             PostTitle(),
-            CustomTagScrollView(total: 10,),
+            Container(
+              width: sizeWidth*0.25,
+              child: CustomTagScrollView(total: 10,)),
           ],
         ),
       ),
