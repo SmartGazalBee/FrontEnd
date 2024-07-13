@@ -14,19 +14,19 @@ class CustomUserSuggestionWidgets extends StatelessWidget {
         SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: CustomText(titleWrite: "20대 남성이 많이 요청한 모델",titleSize: 16),
+          child: CustomText(titleWrite: "20대 남성이 많이 요청한 모델", titleSize: 16),
         ),
         SizedBox(height: 5),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
-              CustomContainer(SizeHeight: _height,SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
+              CustomContainer(SizeHeight: _height, SizeWidth: _width),
             ],
           ),
         ),

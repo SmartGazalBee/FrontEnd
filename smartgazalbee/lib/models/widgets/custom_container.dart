@@ -18,15 +18,14 @@ class CustomContainer extends StatelessWidget {
         width: SizeWidth,
         height: SizeHeight,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
                 color: AppColor.shadow,
                 blurRadius: 10,
-            )
-          ]
-        ),
+              )
+            ]),
       ),
     );
   }

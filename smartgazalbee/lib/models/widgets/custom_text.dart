@@ -12,12 +12,10 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(titleWrite,
+    return Text(
+      titleWrite,
       style: TextStyle(
-          fontSize: titleSize,
-          fontFamily: "Pretendard",
-          color: AppColor.text
-      ),
+          fontSize: titleSize, fontFamily: "Pretendard", color: AppColor.text),
     );
   }
 }

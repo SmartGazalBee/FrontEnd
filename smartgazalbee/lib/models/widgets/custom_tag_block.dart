@@ -6,9 +6,8 @@ class CustomTagBlock extends StatelessWidget {
   final String text;
   final double textSize;
 
-  const CustomTagBlock({
-    required this.size, required this.text, required this.textSize
-  });
+  const CustomTagBlock(
+      {required this.size, required this.text, required this.textSize});
 
   @override
   Widget build(BuildContext context) {
@@ -21,22 +20,22 @@ class CustomTagBlock extends StatelessWidget {
         width: size * screenWidth * 0.01 + text.length * 2,
         height: size * screenHeight * 0.0025,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  color: AppColor.shadow.withOpacity(0.1),
-                  blurRadius: 3,
-              )],
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColor.shadow.withOpacity(0.1),
+              blurRadius: 3,
+            )
+          ],
         ),
         child: Text(
           "${text} ",
           style: TextStyle(
-            color: AppColor.text,
-            fontFamily: "Pretendard",
-            fontWeight: FontWeight.w600,
-            fontSize: textSize
-          ),
+              color: AppColor.text,
+              fontFamily: "Pretendard",
+              fontWeight: FontWeight.w600,
+              fontSize: textSize),
           textAlign: TextAlign.center,
         ),
       ),

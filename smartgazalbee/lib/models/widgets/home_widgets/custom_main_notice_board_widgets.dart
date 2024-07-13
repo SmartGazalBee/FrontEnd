@@ -6,16 +6,16 @@ import 'package:smartgazalbee/models/widgets/custom_text.dart';
 class CustomMainNoticeBoardWidgets extends StatelessWidget {
   final String nameWrite;
 
-  const CustomMainNoticeBoardWidgets({
-    required this.nameWrite
-  });
+  const CustomMainNoticeBoardWidgets({required this.nameWrite});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,

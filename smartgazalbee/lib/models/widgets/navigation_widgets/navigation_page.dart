@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,7 +10,6 @@ import 'package:smartgazalbee/screens/home.dart';
 import 'package:smartgazalbee/screens/notice_board/notice_board.dart';
 import 'package:smartgazalbee/screens/profile.dart';
 
-
 void main() {
   runApp(CustomNavigation());
 }
@@ -21,7 +18,8 @@ class CustomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: BlocProvider(
+      color: Colors.white,
+      home: BlocProvider(
         create: (context) => NavigationBloc(),
         child: NavigationPage(),
       ),
@@ -49,20 +47,29 @@ class NavigationPage extends StatelessWidget {
         },
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(boxShadow: [BoxShadow(color: AppColor.shadow, blurRadius: 10)]),
+        decoration: BoxDecoration(
+            boxShadow: [BoxShadow(color: AppColor.shadow, blurRadius: 10)]),
         child: BlocBuilder<NavigationBloc, NavigationState>(
           builder: (context, state) {
-            int currentIndex = state is NavigationPageLoaded ? state.currentIndex : 0;
+            int currentIndex =
+                state is NavigationPageLoaded ? state.currentIndex : 0;
 
             return BottomNavigationBar(
               currentIndex: currentIndex,
               onTap: (index) {
-                BlocProvider.of<NavigationBloc>(context).add(NavigationTabChanged(tabIndex: index));
+                BlocProvider.of<NavigationBloc>(context)
+                    .add(NavigationTabChanged(tabIndex: index));
               },
               selectedItemColor: AppColor.yellow,
-              selectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 10, fontFamily: 'Pretendard'),
+              selectedLabelStyle: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 10,
+                  fontFamily: 'Pretendard'),
               unselectedItemColor: AppColor.greyText,
-              unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 10, fontFamily: 'Pretendard'),
+              unselectedLabelStyle: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 10,
+                  fontFamily: 'Pretendard'),
               selectedIconTheme: IconThemeData(size: 24),
               unselectedIconTheme: IconThemeData(size: 24),
               showUnselectedLabels: true,
@@ -85,6 +92,7 @@ class NavigationPage extends StatelessWidget {
 
     return List.generate(icons.length, (index) {
       return BottomNavigationBarItem(
+        backgroundColor: Colors.white,
         icon: Padding(
           padding: const EdgeInsets.all(3.0),
           child: SvgPicture.asset(

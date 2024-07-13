@@ -12,9 +12,10 @@ class CustomPostBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     double sizeHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10,0,10,0),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Container(
-        constraints: BoxConstraints( // 최소 최대크기
+        constraints: BoxConstraints(
+          // 최소 최대크기
           maxHeight: sizeHeight * 0.3,
           minHeight: sizeHeight * 0.1 + 50,
         ),
@@ -28,36 +29,41 @@ class CustomPostBlock extends StatelessWidget {
                 color: AppColor.shadow,
                 blurRadius: 10,
               )
-            ]
-        ),
+            ]),
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    UserProfileContainer(),
-                    IconButton(onPressed: () { },icon: SvgPicture.asset("assets/icons/setting.svg"),),
-                  ],
-                ),
-                SizedBox(height: 15,),
-                Text(text,
-                  style: TextStyle(
-                    color: AppColor.text,
-                    fontSize: 14,
-                    fontFamily: "Pretendard",
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 1,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  UserProfileContainer(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset("assets/icons/setting.svg"),
                   ),
-                  overflow: TextOverflow.visible,
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                text,
+                style: TextStyle(
+                  color: AppColor.text,
+                  fontSize: 14,
+                  fontFamily: "Pretendard",
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 1,
                 ),
-              ],
-            ),
+                overflow: TextOverflow.visible,
+              ),
+            ],
+          ),
         ),
-        ),
+      ),
     );
   }
 }

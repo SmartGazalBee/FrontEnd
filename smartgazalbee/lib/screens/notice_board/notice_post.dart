@@ -12,6 +12,7 @@ class NoticePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: CustomAppbarTitle(titleWrite: "SK 아이폰15Pro 실버 256GB",backButton: true),
         body: SingleChildScrollView(
           child: Column(

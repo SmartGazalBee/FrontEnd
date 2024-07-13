@@ -14,19 +14,23 @@ class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 10,
-      shadowColor: AppColor.shadow.withOpacity(0.1),
-      centerTitle: true,
-      leading: backButton ? IconButton(
-        icon: Icon(Icons.chevron_left, color: AppColor.text),
-        onPressed: () => Get.back(),
-      ) : null,
-      actions: [
-        IconButton(onPressed: (){}, icon: SvgPicture.asset("assets/icons/alarm.svg"))
-      ],
-      title: Text(
+    return Container(
+      decoration: BoxDecoration(
+          boxShadow: [BoxShadow(color: AppColor.shadow, blurRadius: 10)]),
+      child: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        leading: backButton
+            ? IconButton(
+                icon: Icon(Icons.chevron_left, color: AppColor.text),
+                onPressed: () => Get.back(),
+              )
+            : null,
+        actions: [
+          IconButton(
+              onPressed: () {}, icon: SvgPicture.asset("assets/icons/alarm.svg"))
+        ],
+        title: Text(
           titleWrite,
           style: TextStyle(
             color: AppColor.text,
@@ -35,6 +39,7 @@ class CustomAppbarTitle extends StatelessWidget implements PreferredSizeWidget {
             fontSize: 16,
           ),
         ),
+      ),
     );
   }
 

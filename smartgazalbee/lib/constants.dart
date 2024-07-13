@@ -16,6 +16,4 @@ abstract class AppColor {
   static const greyText = Color(0xFFC8C8C8);
   static const greyBack = Color(0xFFF2F2F2);
   static const shadow = Color(0x25000000);
-
-
 }

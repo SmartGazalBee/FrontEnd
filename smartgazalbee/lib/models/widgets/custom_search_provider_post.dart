@@ -36,34 +36,37 @@ class CustomSearchProviderPost extends StatelessWidget {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   fontFamily: "Pretendard",
-                  color: AppColor.greyText
-              ),
+                  color: AppColor.greyText),
               prefixIcon: IconButton(
                 icon: SvgPicture.asset("assets/icons/search.svg"),
                 color: AppColor.greyText,
-                onPressed: (){},
+                onPressed: () {},
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColor.greyBack, width: 0.2,
+                  color: AppColor.greyBack,
+                  width: 0.2,
                 ),
                 borderRadius: BorderRadius.circular(5),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColor.greyBack, width: 0.2,
+                  color: AppColor.greyBack,
+                  width: 0.2,
                 ),
                 borderRadius: BorderRadius.circular(5),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColor.greyBack, width: 0.2,
+                  color: AppColor.greyBack,
+                  width: 0.2,
                 ),
                 borderRadius: BorderRadius.circular(5),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColor.greyText, width: 0.2,
+                  color: AppColor.greyText,
+                  width: 0.2,
                 ),
                 borderRadius: BorderRadius.circular(5),
               ),
